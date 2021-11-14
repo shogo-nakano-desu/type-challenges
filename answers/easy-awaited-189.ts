@@ -13,9 +13,12 @@
 */
 
 /* _____________ Your Code Here _____________ */
+// inferは何かの型を得るためのもので、T extends ... ? ... : ...の条件部分でのみ使用することができる。
+// 以下の記事が参考になる。
+// https://reosablo.hatenablog.jp/entry/2020/08/25/005957
 
-type Awaited<T extends Promise<unknown>> = T extends Promise<infer R>
-  ? R
+type Awaited<T extends Promise<unknown>> = T extends Promise<infer U>
+  ? U
   : never;
 
 /* _____________ Test Cases _____________ */
