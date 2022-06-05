@@ -13,7 +13,6 @@
 */
 /* _____________ Your Code Here _____________ */
 
-// myfirst answer
 type If<C extends boolean, T, F> = C extends true ? T : F;
 
 /* _____________ Test Cases _____________ */
