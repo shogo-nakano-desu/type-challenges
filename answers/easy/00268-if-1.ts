@@ -16,8 +16,6 @@
 // myfirst answer
 type If<C extends boolean, T, F> = C extends true ? T : F;
 
-// correct answer
-
 /* _____________ Test Cases _____________ */
 import { Equal, Expect } from "@type-challenges/utils";
 
