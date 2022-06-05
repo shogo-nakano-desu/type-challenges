@@ -17,11 +17,13 @@
 */
 
 /* _____________ Your Code Here _____________ */
-
-type Includes<T extends readonly any[], U> = T extends [infer L, ...infer R]
-  ? [U, L] extends [L, U]
+type Includes<T extends readonly unknown[], U> = T extends [
+  infer First,
+  ...infer Rest
+]
+  ? (<V>() => V extends First ? 1 : 0) extends <V>() => V extends U ? 1 : 0
     ? true
-    : Includes<R, U>
+    : Includes<Rest, U>
   : false;
 
 /* _____________ Test Cases _____________ */
