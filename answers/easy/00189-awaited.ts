@@ -17,6 +17,12 @@
 // 以下の記事が参考になる。
 // https://reosablo.hatenablog.jp/entry/2020/08/25/005957
 
+// type MyAwaited<T extends Promise<any>> = T extends Promise<infer A>
+//   ? A extends Promise<infer B>
+//     ? B
+//     : A
+//   : never;
+
 type Awaited<T extends Promise<unknown>> = T extends Promise<infer U>
   ? U
   : never;
