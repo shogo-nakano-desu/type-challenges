@@ -11,12 +11,11 @@
 */
 
 /* _____________ Your Code Here _____________ */
-
 type MyParameters<T extends (...args: any[]) => any> = T extends (
-  ...args: infer P
-) => any
-  ? P
-  : never;
+  ...args: infer U
+) => unknown
+  ? U
+  : [];
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from "@type-challenges/utils";
